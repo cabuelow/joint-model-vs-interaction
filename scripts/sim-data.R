@@ -108,8 +108,6 @@ for(i in 1:length(loop)){
   #it_lm_categories <- lm(logbio ~ big + old + small + young + restrictions + enviro, dat2)
   #it_lm_categories
   
-  # plot to compare accuracy and precision of effect sizes ------------------------------
-  
   out[[i]] <- data.frame(
     percent_reserves = loop[i]*100, 
     coefficient = c('alpha', 'b_mpa', 'b_restrictions', 'b_age', 'b_size', 'b_enviro'),
@@ -123,10 +121,11 @@ for(i in 1:length(loop)){
   )
 }
 
+# plot to compare accuracy and precision of effect sizes ------------------------------
+
 plot_dat <- do.call(rbind, out)
 
 plot_dat %>% 
-  mutate(percent_reserves = percent_reserves*100) %>% 
   ggplot() +
   #geom_point(aes(x = truth, y = coefficient), col = 'black', alpha = 0.5) +
   geom_vline(xintercept = 1, alpha = 0.5, lty = 'dashed') +
