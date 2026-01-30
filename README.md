@@ -1,4 +1,4 @@
-### Simulation study to explore joint model vs. interaction to estimate MPA effects
+### Simulation study to explore joint model vs. simple linear model to estimate MPA effects
 
 This repository contains code to simulate fish biomass (in log units) and determine whether a joint modelling approach is required to estimate the effects of MPA reserve age and size, or if using an interaction (i.e., assuming 0s for MPA age and size where MPAs are not present) results is also able to accurately recover effect sizes.
 
